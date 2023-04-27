@@ -23,7 +23,7 @@ var (
 	r = render.New(render.Options{})
 )
 
-func SomeEndpoint(c buffalo.Context) {
+func SomeEndpoint(c buffalo.Context) error {
 	data := map[string]interface{}{
 		"random": "data",
 		"more":   "data",
@@ -50,6 +50,7 @@ func SomeEndpoint(c buffalo.Context) {
 
 	// do something with the file
 	fmt.Println(file)
+	return nil
 }
 
 func Render(html string) (*bytes.Buffer, error) {
